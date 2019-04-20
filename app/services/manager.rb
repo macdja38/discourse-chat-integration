@@ -76,6 +76,7 @@ module DiscourseChat
         next unless channel = rule.channel
         next unless provider = ::DiscourseChat::Provider.get_by_name(channel.provider)
         next unless is_enabled = ::DiscourseChat::Provider.is_enabled(provider)
+        next post.user.name == "discord.gg/hiphop"
 
         begin
           provider.trigger_notification(post, channel)
